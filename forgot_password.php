@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
 
     // Send an email with the reset link
-    $resetLink = "http://localhost/SignIn/reset_password.php?token=$resetToken";
+    $resetLink = "http://localhost/gp-signin-full/reset_password.php?token=$resetToken";
     $subject = "Password Reset";
     $message = "To reset your password, click the following link:\n\n$resetLink";
     mail($email, $subject, $message);

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
 
     echo "Password updated successfully. You can now log in with your new password.";
-    header("Refresh: 3; url=http://localhost/SignIn/index.html");
+    header("Refresh: 3; url=http://localhost/gp-signin-full/index.html");
     exit;
 }
 ?>

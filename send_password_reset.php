@@ -60,18 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //Content
             $mail->isHTML(false);   // Set email format to plain text
             $mail->Subject = 'Password Reset';
-            $mail->Body    = "To reset your password, click the following link:\n\nhttp://localhost/SignIn/reset_password.php?token=$resetToken";
+            $mail->Body    = "To reset your password, click the following link:\n\nhttp://localhost/gp-signin-full/reset_password.php?token=$resetToken";
 
             $mail->send();
             echo "An email with instructions to reset your password has been sent to " . $email;
             // Redirect back to index.html after 5 seconds
-            header("Refresh: 3; url=http://localhost/SignIn/index.html");
+            header("Refresh: 3; url=http://localhost/gp-signin-full/index.html");
         } catch (Exception $e) {
             echo "Error sending email: " . $mail->ErrorInfo;
         }
     } else {
         echo "Email address not found in our records.";
-        header("Refresh: 3; url=http://localhost/SignIn/forgot_password.php");
+        header("Refresh: 3; url=http://localhost/gp-signin-full/forgot_password.php");
     }
     
     $checkStmt->close();
